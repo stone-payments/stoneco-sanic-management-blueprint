@@ -1,31 +1,33 @@
 from unittest import TestCase
 
 from aioresponses import aioresponses
+import asyncio
 
 from python_management_blueprint.management import HealthCheck
 
 
-class TestAppInfo(TestCase):
+class TestHealthCheck(TestCase):
 
     def setUp(self):
         HealthCheck.RESOURCES = []
 
     @aioresponses()
-    async def test_check_resources_health(self, mock):
+    def test_check_resources_health(self, mock):
         HealthCheck.register_resource(
             "resource1", "http://mock.com/health-check")
 
         mock.get("http://mock.com/health-check", status=200,
                  payload={"success": False})
 
-        actual = await HealthCheck.check_resources_health()
+        loop = asyncio.get_event_loop()
+        actual = loop.run_until_complete(HealthCheck.check_resources_health())
 
         expected = {"resource1": {"success": False}}
 
         self.assertEqual(actual, expected)
 
     @aioresponses()
-    async def test_check_multiple_resources_health(self, mock):
+    def test_check_multiple_resources_health(self, mock):
         HealthCheck.register_resource(
             "resource1", "http://mock.com/health-check")
         mock.get("http://mock.com/health-check", status=200,
@@ -41,7 +43,8 @@ class TestAppInfo(TestCase):
         mock.get("http://dunno.com/health-check", status=500,
                  payload={"message": "Internal Error"})
 
-        actual = await HealthCheck.check_resources_health()
+        loop = asyncio.get_event_loop()
+        actual = loop.run_until_complete(HealthCheck.check_resources_health())
 
         expected = {
             "resource1": {"success": True},
