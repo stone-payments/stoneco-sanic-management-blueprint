@@ -15,5 +15,5 @@ setup(
     packages=find_packages(exclude=['tests']),
     py_modules=['python_management_blueprint'],
     url='https://github.com/stone-payments/python-management-blueprint',
-    version='0.0.1',
+    version='0.1.0',
 )
