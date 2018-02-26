@@ -1,16 +1,16 @@
 # Python Management Blueprint
 
-Este repositório contém um projeto desenvolvido em Python3 :heart: para expor uma blueprint com os endpoints necessários das metas de engenharia de TI da Stone.
+This repository contains a project developed with Python3 :heart: with a blueprint that describe the necessary endpoints to meet the engineering goals.
 
-## Começando...
+## Starting...
 
-Estas instruções devem ser suficientes para replicar o ambiente de desenvolvimento para este projeto em seu computador. Caso estas instruções não sejam suficientes, por favor, simplesmente submeta um pull request para este projeto.
+This instructions should be enough to replicate the development enviroment of this project. If this is not the case, please, feel free to open a pull request.
 
-## Pré-Requisitos
+## Prerequisites
 
-Após clonar este projeto, para levantar o ambiente de desenvolvimento você vai precisar de Python 3.5.
+After cloning the project, you will need Python 3.5.
 
-## Criando um ambiente virtual e instalando dependências
+## Enviroment
 
 ```
 python3 -m venv /path/to/new/virtual/environment
@@ -18,32 +18,32 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Configurações
+## Settings
 
-Para a configuração do projeto, é esperado que exista um arquivo json com tais informações. Este arquivo é esperado que se encontre no caminho definido pela variável de ambiente CONFIG_FILE_PATH.
+To successfully set up the project, a json file is needed. This file should be in path described in the enviroment variable CONFIG_FILE_PATH.
 
-Além disso, para que o retorno da saúde do projeto seja coerente, é necessário que cada dependência do projeto seja adicionada via método `register_resource` da classe `AppInfo`. Este método espera receber como argumento uma função que retorna `True` ou `False` de acordo com o estado da saúde da dependência.
+Besides that, all of the project's dependencies should be added with the `AppInfo`'s method `register_resource`. This method should receive a function that returns `True` or `False` depending on the dependency's health.
 
-## Rodando o projeto
+## Running
 
-Se tudo não deu errado até aqui, ao executar o arquivo `run.py` no seu computador, será levantada uma API de exemplo com os endpoints desejados devidamente configurados.
+If all goes right, you should be run the `run.py` file inside the samples folder.
 
-## Rodando os testes
+## Testing
 
-Para rodar os testes de unidade, utilize o seguinte comando na raiz do projeto:
+Unit tests:
 
 `nosetests tests/unit`
 
-Para medir o coverage, utilize o seguinte comando na raiz do projeto:
+Coverage:
 
 `nosetests --with-coverage --cover-package=app`
 
 
-## Feito com
+## Built With
 
 Python 3.5.2
 
-## Autores
+## Authors
 
 Build with :heart: by Team Satisfação do Cliente!
 
