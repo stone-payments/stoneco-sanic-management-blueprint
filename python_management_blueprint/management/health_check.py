@@ -13,7 +13,6 @@ async def fetch(session, url):
 async def execute_request(url):
     async with aiohttp.ClientSession() as session:
         json = await fetch(session, url)
-        print(json)
         return json
 
 
@@ -38,7 +37,11 @@ class HealthCheck(object):
         url_list = [list(rec.values())[0]
                     for rec in cls.RESOURCES]
 
+        name_list = [list(rec.keys())[0]
+                     for rec in cls.RESOURCES]
+
         loop = asyncio.get_event_loop()
-        await asyncio.gather(
+        resp = loop.run_until_complete(asyncio.gather(
             *[execute_request(url) for url in url_list]
-        )
+        ))
+        return dict(zip(name_list, resp))
