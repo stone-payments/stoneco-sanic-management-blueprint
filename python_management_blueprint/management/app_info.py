@@ -27,6 +27,7 @@ class AppInfo(object):
                 else:
                     unhealthy += 1
             except Exception as exc:
+                # TODO logar exception
                 print(exc)
                 unhealthy += 1
 
