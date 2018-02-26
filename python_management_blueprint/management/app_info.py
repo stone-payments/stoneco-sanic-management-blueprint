@@ -57,6 +57,7 @@ class AppInfo(object):
             with open(file_path, 'r') as config_file:
                 cls.CONFIG = json.load(config_file)
         except (IOError, ValueError) as exc:
+            # TODO logar exception
             print(exc)
 
     @classmethod
