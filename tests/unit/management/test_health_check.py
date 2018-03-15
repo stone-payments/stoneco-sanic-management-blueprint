@@ -3,7 +3,7 @@ from unittest import TestCase
 from aioresponses import aioresponses
 import asyncio
 
-from python_management_blueprint.management import HealthCheck
+from stoneco_sanic_management_blueprint.management import HealthCheck
 
 
 class TestHealthCheck(TestCase):

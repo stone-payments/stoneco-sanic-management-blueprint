@@ -11,9 +11,9 @@ setup(
     install_requires=['aiofiles', 'httptools', 'sanic',
                       'ujson', 'uvloop', 'websockets'],
     long_description=open('README.md').read().strip(),
-    name='python_management_blueprint',
+    name='stoneco_sanic_management_blueprint',
     packages=find_packages(exclude=['tests']),
-    py_modules=['python_management_blueprint'],
-    url='https://github.com/stone-payments/python-management-blueprint',
+    py_modules=['stoneco_sanic_management_blueprint'],
+    url='https://github.com/stone-payments/stoneco-sanic-management-blueprint',
     version='0.1.0',
 )
