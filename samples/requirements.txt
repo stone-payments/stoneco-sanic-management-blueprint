@@ -1,0 +1,12 @@
+aiofiles==0.3.2
+certifi==2018.1.18
+chardet==3.0.4
+httptools==0.0.10
+idna==2.6
+requests==2.18.4
+sanic==0.7.0
+sanic-management-blueprint==0.1.0
+ujson==1.35
+urllib3==1.22
+uvloop==0.9.1
+websockets==4.0.1
