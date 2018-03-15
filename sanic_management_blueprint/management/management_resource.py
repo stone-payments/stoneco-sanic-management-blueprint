@@ -22,7 +22,6 @@ async def app_info(request):
 
 async def health_check(request):
     """Returns general informations about the health of the application"""
-    return json({
-        "app": AppInfo.app_info(),
-        "dependencies": await HealthCheck.check_resources_health(),
-    })
+    info = AppInfo.app_info()
+    info['Components'] = await HealthCheck.check_resources_health()
+    return json(info)

@@ -44,11 +44,8 @@ class HealthCheck(object):
         url_list = [list(rec.values())[0]
                     for rec in cls.RESOURCES]
 
-        name_list = [list(rec.keys())[0]
-                     for rec in cls.RESOURCES]
-
         resp = await asyncio.gather(
             *[execute_request(url) for url in url_list]
         )
 
-        return dict(zip(name_list, resp))
+        return resp
