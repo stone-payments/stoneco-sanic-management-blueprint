@@ -1,4 +1,4 @@
-# Python Management Blueprint
+# Sanic Management Blueprint
 
 This repository contains a project developed with Python3 :heart: with a blueprint that describe the necessary endpoints to meet the engineering goals.
 
