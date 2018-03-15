@@ -36,7 +36,7 @@ Unit tests:
 
 Coverage:
 
-`nosetests --with-coverage --cover-package=app`
+`nosetests --with-coverage --cover-package=python_management_blueprint`
 
 
 ## Built With
