@@ -1,6 +1,6 @@
 """A module that creates a Sanic App and registers its blueprints."""
 from sanic import Sanic
-from stoneco_sanic_management_blueprint.management import setup_blueprint
+from sanic_management_blueprint.management import setup_blueprint
 
 
 def create_api():

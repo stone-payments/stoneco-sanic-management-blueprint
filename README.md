@@ -36,7 +36,7 @@ Unit tests:
 
 Coverage:
 
-`nosetests --with-coverage --cover-package=stoneco_sanic_management_blueprint`
+`nosetests --with-coverage --cover-package=sanic_management_blueprint`
 
 
 ## Built With

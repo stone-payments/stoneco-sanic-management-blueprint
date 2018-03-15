@@ -2,7 +2,7 @@ import os
 from unittest import TestCase
 from unittest.mock import patch, MagicMock
 
-from stoneco_sanic_management_blueprint.management import AppInfo
+from sanic_management_blueprint.management import AppInfo
 
 
 def healthy():
@@ -82,8 +82,8 @@ class TestAppInfo(TestCase):
         AppInfo.read_config()
         self.assertEqual(AppInfo.CONFIG, {})
 
-    @patch("stoneco_sanic_management_blueprint.management.AppInfo.app_status")
-    @patch("stoneco_sanic_management_blueprint.management.AppInfo.read_config")
+    @patch("sanic_management_blueprint.management.AppInfo.app_status")
+    @patch("sanic_management_blueprint.management.AppInfo.read_config")
     def test_app_info_no_config(self, mock_read, mock_status):
         mock_status.return_value = 10
         actual = AppInfo.app_info()
@@ -94,8 +94,8 @@ class TestAppInfo(TestCase):
         self.assertEqual(actual["Version"], "Unknown")
         self.assertEqual(actual["Status"], 10)
 
-    @patch("stoneco_sanic_management_blueprint.management.AppInfo.app_status")
-    @patch("stoneco_sanic_management_blueprint.management.AppInfo.read_config")
+    @patch("sanic_management_blueprint.management.AppInfo.app_status")
+    @patch("sanic_management_blueprint.management.AppInfo.read_config")
     def test_app_info_with_config(self, mock_read, mock_status):
         AppInfo.CONFIG = {
             "ApplicationName": "mock1",
