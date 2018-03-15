@@ -60,7 +60,7 @@
 
 Commit exemple:
 ```
-git commit -m ":arrow_up: Updates cocoapod dependencies"
+git commit -m ":arrow_up: Updates requirements.txt"
 ```
 
 ### Pull Requests
