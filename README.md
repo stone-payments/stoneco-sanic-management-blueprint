@@ -10,7 +10,7 @@ This instructions should be enough to replicate the development enviroment of th
 
 After cloning the project, you will need Python 3.5.
 
-## Enviroment
+## Environment
 
 ```
 python3 -m venv /path/to/new/virtual/environment
